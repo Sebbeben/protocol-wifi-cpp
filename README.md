@@ -13,4 +13,4 @@ For a device to be able to connect to an JURA coffee maker via WiFi, a [WiFi Con
 I use this command to dump the entire flash memory of my Jura WiFi Device
 
 .\esptool.exe --baud 115200 --port COM6 read_flash 0x0 0x400000 jura-backup-4M.bin
-![Dumping Firmware] (ressources/images/Firmwaredump_sucessfull.png)
+[Dumping Firmware] (ressources/images/Firmwaredump_sucessfull.png)
