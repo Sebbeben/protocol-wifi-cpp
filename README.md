@@ -23,7 +23,7 @@ a tricky thing is to get the ESP into programming mode, this took me a very long
 <p float="left">
   <img src="/resources/Sketch_Schaltplan.png" width="800" />
 
-![3D_Model_Housing](3D_printed_case/images/JURA_Smart_Connect_WiFi_top.png)
+![3D_Model_Housing](3D_printed_case/images/JURA_Smart_Connect_WiFi_top.png) width="800"
 ![3D_Model_Housing](3D_printed_case/images/JURA_Smart_Connect_WiFi_bottom.png)
 ![3D_Model_Housing](3D_printed_case/images/compare1.jpg)
 ![3D_Model_Housing](3D_printed_case/images/compare2.jpg)
