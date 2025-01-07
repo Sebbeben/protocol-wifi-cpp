@@ -8,7 +8,7 @@ For a device to be able to connect to an JURA coffee maker via WiFi, a [WiFi Con
 ![WiFi Connect dongle](ressources/images/wifi_dongle_case.png)
 
 ## Dumping the Firmware
-i soldered wired to the pads and connected 3.3v, gnd TX & RX
+i soldered wired to the pads and connected 3.3v, GND, TX, RX & GPIO 1
 ![ESP32 inside the WiFi Connect dongle](ressources/images/jura_wiring.png)
 
 I use this command to dump the entire flash memory of my Jura WiFi Device
