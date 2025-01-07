@@ -21,18 +21,18 @@ a tricky thing is to get the ESP into programming mode, this took me a very long
 
 3D Printed Housing
 
-3D printed case/images/JURA Smart Connect WiFi top.png
-3D printed case/images/JURA Smart Connect WiFi bottom.png
-3D printed case/images/compare1.jpg
-3D printed case/images/compare2.jpg
-3D printed case/images/side1.jpg
-3D printed case/images/side2.jpg
-3D printed case/images/side3.jpg
-Sebbeben/protocol-wifi-cpp/3D printed case/images/top1.jpg
+![3D_Model_Housing](3D printed case/images/JURA Smart Connect WiFi top.png)
+![3D_Model_Housing](3D printed case/images/JURA Smart Connect WiFi bottom.png)
+![3D_Model_Housing](3D printed case/images/compare1.jpg)
+![3D_Model_Housing](3D printed case/images/compare2.jpg)
+![3D_Model_Housing](3D printed case/images/side1.jpg)
+![3D_Model_Housing](3D printed case/images/side2.jpg)
+![3D_Model_Housing](3D printed case/images/side3.jpg)
+![3D_Model_Housing](3D printed case/images/top1.jpg)
 
 ---------------------------------------------------------
 
 PCB Reverse Engineered
 
-PCB Files/images/bottom_ex_pinheader.jpg
-PCB Files/images/top_ex_esp32.jpg
+![PCB](PCB Files/images/bottom_ex_pinheader.jpg)
+![PCB](PCB Files/images/top_ex_esp32.jpg)
