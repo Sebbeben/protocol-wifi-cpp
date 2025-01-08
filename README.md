@@ -24,8 +24,6 @@ then i used this command after installing esptool for windows.
 ---------------------------------------------------------
 
 3D Printed Housing
-<p float="left">
-  <img src="/resources/Sketch_Schaltplan.png" width="800" />
 
 ![3D_Model_Housing](3D_printed_case/images/JURA_Smart_Connect_WiFi_top.png) width="800"
 ![3D_Model_Housing](3D_printed_case/images/JURA_Smart_Connect_WiFi_bottom.png)
@@ -36,7 +34,6 @@ then i used this command after installing esptool for windows.
 ![3D_Model_Housing](3D_printed_case/images/side3.jpg)
 ![3D_Model_Housing](3D_printed_case/images/top1.jpg)
 
-</p>
 ---------------------------------------------------------
 
 PCB Reverse Engineered
