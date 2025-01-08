@@ -17,10 +17,6 @@ a tricky thing is to get the ESP into programming mode, this took me a very long
 
 then i used this command after installing esptool for windows.
 
-1. Clone the code:
-
-        git clone https://github.com/node-red/node-red.git
-        cd node-red
 
         .\esptool.exe --baud 115200 --port COM6 read_flash 0x0 0x400000 jura-backup-4M.bin
 ![Dumping Firmware](ressources/images/Firmwaredump_sucessfull.png)
