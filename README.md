@@ -14,7 +14,15 @@ i soldered wired to the pads and connected 3.3v, GND, TX, RX & GPIO 1
 I use this command to dump the entire flash memory of my Jura WiFi Device
 
 a tricky thing is to get the ESP into programming mode, this took me a very long time to do, you have to short GND and GPIO 1 when powering up.
-.\esptool.exe --baud 115200 --port COM6 read_flash 0x0 0x400000 jura-backup-4M.bin
+
+then i used this command after installing esptool for windows.
+
+1. Clone the code:
+
+        git clone https://github.com/node-red/node-red.git
+        cd node-red
+
+        .\esptool.exe --baud 115200 --port COM6 read_flash 0x0 0x400000 jura-backup-4M.bin
 ![Dumping Firmware](ressources/images/Firmwaredump_sucessfull.png)
 
 ---------------------------------------------------------
