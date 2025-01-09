@@ -35,8 +35,3 @@ then i used this command after installing esptool for windows.
 ![3D_Model_Housing](3D_printed_case/images/top1.jpg)
 
 ---------------------------------------------------------
-
-PCB Reverse Engineered
-
-![PCB](PCB_Files/images/bottom_ex_pinheader.jpg)
-![PCB](PCB_Files/images/top_ex_esp32.jpg)
