@@ -2,7 +2,9 @@
 
 The dongle talks to the coffee machine over the machine's service-port UART. This protocol was
 documented by prior projects — most of this section is **their** work, summarised here for context;
-see credits. The dongle's firmware implements the same scheme (confirmed in decompilation).
+see credits. The running firmware contains a UART driver plus the `TY:`/`@T1` handshake and the 0x5B
+codec (seen in decompilation); higher-level product commands appear to be relayed from the WiFi
+`*`-channel rather than hard-coded. Treat the dongle-specific specifics as unverified.
 
 > **⚠️ The dongle-specific details are reverse-engineered and unverified;** the general JURA UART
 > protocol below is well-established by the cited projects.
