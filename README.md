@@ -9,3 +9,22 @@ For a device to be able to connect to an JURA coffee maker via WiFi, a [WiFi Con
 
 ## Dumping the Firmware
 ![ESP32 inside the WiFi Connect dongle](ressources/images/wifi_dongle_esp32.png)
+
+## Reverse-engineered protocol documentation
+This adds reverse-engineered documentation of the WiFi Connect dongle's protocols — see
+[`protocol/`](protocol/):
+
+- **WiFi LAN control protocol** — the dongle's own TCP/UDP server on port **51515** (`@H…` command set
+  + a `*`-prefixed encoded coffee-machine passthrough). Lets the stock dongle be controlled locally,
+  no cloud. ([`protocol/wifi-local-protocol.md`](protocol/wifi-local-protocol.md))
+- **JURA UART protocol** — 9600 8N1, the keyless 0x5B transfer encoding, V2 handshake + older V1
+  vocabulary. ([`protocol/uart-protocol.md`](protocol/uart-protocol.md))
+- **Cloud architecture** — Keycloak / `joeapi.jura.com` / *pocketpilot*, observed from the J.O.E. app.
+  ([`protocol/cloud-architecture.md`](protocol/cloud-architecture.md))
+
+> ⚠️ **Reverse-engineered from firmware via static analysis — not yet verified on live hardware.**
+> Treat as a working hypothesis until confirmed with a packet/UART capture.
+
+Builds on prior work by Jutta-Proto, [COM8/esp32-jura](https://github.com/COM8/esp32-jura),
+[mkalen/jura-smartconnect-wifi](https://github.com/mkalen/jura-smartconnect-wifi), and
+[juramote](https://6xq.net/juramote/) — see [REFERENCES.md](REFERENCES.md).
