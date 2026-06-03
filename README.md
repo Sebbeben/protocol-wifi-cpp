@@ -16,16 +16,21 @@ dongle is required. It plugs into the machine's service port and bridges the mac
 
 ## What's inside the dongle
 - **SoC:** classic **ESP32-D0WD** (Xtensa LX6, dual-core) — *not* an ESP32-C3.
-- **Firmware:** built on **ESP-AT** (Espressif's AT firmware) plus a JURA application layer.
+- **Running firmware:** a **custom JURA ESP-IDF app** that is **LAN-focused** — WiFi + a local TCP/UDP
+  control server + the machine UART. It contains **no XMPP/cloud client**.
+  - A stock **ESP-AT** firmware image is *also present in flash* (with cloud/OTA code) but it is
+    **dormant — not booted**. Earlier write-ups that called the dongle "ESP-AT based" were reading that
+    dormant image; see [`protocol/firmware-images.md`](protocol/firmware-images.md).
 - It speaks the **JURA UART protocol** (9600 8N1, the "0x5B" transfer encoding) to the machine, and
-  exposes control over **WiFi on the LAN** (and, via JURA's cloud, remotely).
+  exposes control over **WiFi on the LAN** via its own `@H…` protocol.
 
 ## How control actually works (the key finding)
 The dongle is **primarily a LAN device**. On the local network it runs a **TCP + UDP server on port
 51515** speaking a line-based `@H…` command protocol; the actual machine commands are tunnelled over a
-`*`-prefixed encoded channel. JURA's cloud (Keycloak + `joeapi.jura.com`, codename *pocketpilot*) bridges
-the phone app to the dongle — but for local control **you can talk to the dongle directly and skip the
-cloud entirely.**
+`*`-prefixed encoded channel. **The running firmware has no cloud client**, so for local control you
+just talk to the dongle directly over the LAN — no cloud involved. (JURA's own cloud — Keycloak +
+`joeapi.jura.com`, codename *pocketpilot* — is used by the phone app; how it reaches the dongle in this
+firmware version is unconfirmed.)
 
 → Full details in **[`protocol/`](protocol/)**.
 
