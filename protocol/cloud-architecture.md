@@ -25,8 +25,11 @@ the dongle's own LAN protocol (`wifi-local-protocol.md`).
 - The dongle's cloud credentials (JID/token) are **provisioned at pairing** and are not present in a
   factory-fresh firmware dump — capturing them (or the LAN protocol) requires a live device.
 
-## Notes on the firmware "cloud" strings
-The dongle firmware's `download_rom` / `+CIPUPDATE` OTA path points at Espressif's demo host
-`iot.espressif.cn` and ships Espressif's **example** TLS CA — i.e. it's largely **stock ESP-AT example
-code**, and that TLS path performs **no certificate verification**. The JURA-specific cloud glue is in the
-application layer, not these ESP-AT leftovers.
+## Important: these cloud/OTA strings are in a DORMANT firmware image
+A stock **ESP-AT** firmware image is present in the dongle's flash (with an XMPP client and a
+`download_rom`/`+CIPUPDATE` OTA path pointing at Espressif's demo host `iot.espressif.cn`, using
+Espressif's **example** TLS CA with **no certificate verification**). **But that image is not booted** —
+the running firmware is a custom JURA app with **no cloud client** (see
+[`firmware-images.md`](firmware-images.md)). So those cloud/OTA/TLS details describe the **dormant**
+image, **not** the live dongle. Earlier notes calling the dongle "ESP-AT based" were reading that
+dormant image.

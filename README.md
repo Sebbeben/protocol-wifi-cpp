@@ -14,6 +14,8 @@ For a device to be able to connect to an JURA coffee maker via WiFi, a [WiFi Con
 This adds reverse-engineered documentation of the WiFi Connect dongle's protocols — see
 [`protocol/`](protocol/):
 
+- **Which firmware runs** — the booted image is a **custom JURA LAN app** (no cloud client); a stock
+  **ESP-AT** image is present in flash but **dormant**. ([`protocol/firmware-images.md`](protocol/firmware-images.md))
 - **WiFi LAN control protocol** — the dongle's own TCP/UDP server on port **51515** (`@H…` command set
   + a `*`-prefixed encoded coffee-machine passthrough). Lets the stock dongle be controlled locally,
   no cloud. ([`protocol/wifi-local-protocol.md`](protocol/wifi-local-protocol.md))
