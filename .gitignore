@@ -1,0 +1,11 @@
+# Reverse-engineering working artifacts (firmware dump, decompilation, J.O.E. app,
+# tooling, untested custom firmware, hardware design) are kept in a separate PRIVATE
+# repo and only published here once verified. Never commit them to this public fork.
+Firmware/
+joe-app/
+custom-firmware/
+hardware/
+*.bin
+*.elf
+*.apk
+.claude/

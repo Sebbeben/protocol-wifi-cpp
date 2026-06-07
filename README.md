@@ -24,8 +24,13 @@ This adds reverse-engineered documentation of the WiFi Connect dongle's protocol
 - **Cloud architecture** — Keycloak / `joeapi.jura.com` / *pocketpilot*, observed from the J.O.E. app.
   ([`protocol/cloud-architecture.md`](protocol/cloud-architecture.md))
 
-> ⚠️ **Reverse-engineered from firmware via static analysis — not yet verified on live hardware.**
-> Treat as a working hypothesis until confirmed with a packet/UART capture.
+- **`*`-channel codec** — a compiled, self-testing C++ reference implementation of the WiFi obfuscation
+  (the same shuffle as JURA Bluetooth). ([`src/wifi/ByteEncDecoder.cpp`](src/wifi/ByteEncDecoder.cpp))
+
+> ✅ **The WiFi `@H` LAN protocol is now hardware-verified** (2026-06-06) on a real TT237W dongle —
+> transport, the `@HP:` handshake, the `@H…` identity/version commands, and the `*`-channel obfuscation
+> (decodes captured frames to exact ASCII). Still hypothesis pending a live machine: exact `@HP:` field
+> semantics, `@HR`/`@HB` details, and the live `*` machine command stream. UART/cloud docs remain static analysis.
 
 Builds on prior work by Jutta-Proto, [COM8/esp32-jura](https://github.com/COM8/esp32-jura),
 [mkalen/jura-smartconnect-wifi](https://github.com/mkalen/jura-smartconnect-wifi), and
