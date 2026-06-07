@@ -8,11 +8,13 @@ dongle is required. It plugs into the machine's service port and bridges the mac
 
 ![WiFi Connect dongle](ressources/images/wifi_dongle_case.png)
 
-> **⚠️ Status: reverse-engineered, NOT yet hardware-verified.**
-> The protocol documentation here was derived from **static analysis** of a dongle's firmware and the
-> J.O.E. Android app. It has **not yet been confirmed against a live device** (no compatible machine on
-> hand). Treat everything as a well-reasoned **working hypothesis** until a packet/UART capture confirms
-> it. Corrections welcome.
+> **✅ Status: the WiFi `@H` LAN protocol is hardware-verified (2026-06-06).**
+> The transport, the `@HP:` handshake, the `@H…` identity/version commands, and the `*`-channel
+> obfuscation were confirmed on a real TT237W dongle — see [`protocol/wifi-local-protocol.md`](protocol/wifi-local-protocol.md).
+> The `*` codec is **solved** (it's the same shuffle as JURA Bluetooth — [Jutta-Proto/protocol-bt-cpp](https://github.com/Jutta-Proto/protocol-bt-cpp));
+> a compiled, self-testing reference implementation is in [`src/wifi/ByteEncDecoder.cpp`](src/wifi/ByteEncDecoder.cpp).
+> Still hypothesis until a live machine confirms them: exact `@HP:` field semantics, `@HR`/`@HB` register &
+> discovery details, and the live `*` machine command stream. The UART/cloud docs remain static-analysis. Corrections welcome.
 
 ## What's inside the dongle
 - **SoC:** classic **ESP32-D0WD** (Xtensa LX6, dual-core) — *not* an ESP32-C3.
